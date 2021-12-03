@@ -6,19 +6,19 @@ commands = [(
 ]
 
 depth, forward = 0, 0
-for command in commands:
-    if command[0] == 'forward':
-        forward += command[1]
+for (c, n) in commands:
+    if c == 'forward':
+        forward += n
     else:
-        depth += (command[1] if command[0] == 'down' else -command[1])
+        depth += (n if c == 'down' else -n)
 print(depth * forward)
 
 depth, forward, aim = 0, 0, 0
-for command in commands:
-    if command[0] == 'forward':
-        forward += command[1]
-        depth += command[1] * aim
+for (c, n) in commands:
+    if c == 'forward':
+        forward += n
+        depth += n * aim
     else:
-        aim += (command[1] if command[0] == 'down' else -command[1])
+        aim += (n if c == 'down' else -n)
 
 print(depth * forward)
