@@ -1,3 +1,5 @@
 secret
 *.kt
 *.kts
+.idea
+out
